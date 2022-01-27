@@ -1,7 +1,11 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+import Header from "./Header";
 
 const GlobalStyle = createGlobalStyle`
+html,body, #root {
+  height: 100%;
+}
   body{
     font-family: 'Open Sans', sans-serif;
     line-height: 1.2;
@@ -15,10 +19,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Layout = ({ children }) => {
-    return (
-        <div>
-            <GlobalStyle />
-            <section>{children}</section>
-        </div>
-    );
+  return (
+    <div>
+      <GlobalStyle />
+      <Header />
+      <section>{children}</section>
+    </div>
+  );
 };
